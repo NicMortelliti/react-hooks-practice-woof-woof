@@ -18,10 +18,6 @@ function App() {
       .then(setDogArrayState);
   }, []);
 
-  useEffect(() => {
-    console.log(selectedDogState);
-  }, [selectedDogState]);
-
   return (
     <div className="App">
       <Filter filterState={filterState} setFilterState={setFilterState} />
@@ -30,10 +26,7 @@ function App() {
         dogArray={dogArrayState}
         setSelectedDogState={setSelectedDogState}
       />
-      <div id="dog-summary-container">
-        <h1>DOGGO:</h1>
-        <div id="dog-info"></div>
-      </div>
+      <Profile />
     </div>
   );
 }
