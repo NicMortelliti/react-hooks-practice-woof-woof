@@ -18,6 +18,11 @@ function App() {
       .then(setDogArrayState);
   }, []);
 
+  // Handle change from good to bad dog on API and vice versa
+  function handleBehaviorChange(id, isGoodDog) {
+    console.log("Dog id: ", id, " Current behavior: ", isGoodDog);
+  }
+
   return (
     <div className="App">
       <Filter filterState={filterState} setFilterState={setFilterState} />
@@ -28,7 +33,7 @@ function App() {
       />
       {dogArrayState.map(dog => {
         return dog.id === selectedDogState ? (
-          <Profile selectedDog={dog} />
+          <Profile selectedDog={dog} handleClick={handleBehaviorChange} />
         ) : null;
       })}
     </div>
