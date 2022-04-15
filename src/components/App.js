@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Filter from "./Filter";
 import Bar from "./Bar";
+import Profile from "./Profile";
 
 const API = "http://localhost:3001/pups";
 
