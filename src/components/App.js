@@ -8,6 +8,7 @@ function App() {
   // Store filter state at App level
   const [filterState, setFilterState] = useState(false);
   const [dogArrayState, setDogArrayState] = useState([]);
+  const [selectedDogState, setSelectedDogState] = useState();
 
   // Get dog info from API upon page load
   useEffect(() => {
@@ -16,10 +17,18 @@ function App() {
       .then(setDogArrayState);
   }, []);
 
+  useEffect(() => {
+    console.log(selectedDogState);
+  }, [selectedDogState]);
+
   return (
     <div className="App">
       <Filter filterState={filterState} setFilterState={setFilterState} />
-      <Bar dogArray={dogArrayState} />
+      <Bar
+        filterState={filterState}
+        dogArray={dogArrayState}
+        setSelectedDogState={setSelectedDogState}
+      />
       <div id="dog-summary-container">
         <h1>DOGGO:</h1>
         <div id="dog-info"></div>

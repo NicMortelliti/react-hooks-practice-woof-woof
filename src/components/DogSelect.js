@@ -1,7 +1,7 @@
 import React from "react";
 
-function DogSelect() {
-  return null;
+function DogSelect({ dog, setSelectedDogState }) {
+  return <span onClick={() => setSelectedDogState(dog.id)}>{dog.name}</span>;
 }
 
 export default DogSelect;
