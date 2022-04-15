@@ -26,7 +26,11 @@ function App() {
         dogArray={dogArrayState}
         setSelectedDogState={setSelectedDogState}
       />
-      <Profile />
+      {dogArrayState.map(dog => {
+        return dog.id === selectedDogState ? (
+          <Profile selectedDog={dog} />
+        ) : null;
+      })}
     </div>
   );
 }
