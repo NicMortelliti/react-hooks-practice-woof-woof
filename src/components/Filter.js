@@ -1,9 +1,11 @@
 import React from "react";
 
-function Filter() {
+function Filter({ filterState, setFilterState }) {
   return (
     <div id="filter-div">
-      <button id="good-dog-filter">Filter good dogs: OFF</button>
+      <button id="good-dog-filter" onClick={() => setFilterState(!filterState)}>
+        {filterState ? "Filter good dogs: ON" : "Filter good dogs: OFF"}
+      </button>
     </div>
   );
 }

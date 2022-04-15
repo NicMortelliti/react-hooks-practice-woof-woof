@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <Filter filterGoodDogs={filterState} />
+      <Filter filterState={filterState} setFilterState={setFilterState} />
       <div id="dog-bar"></div>
       <div id="dog-summary-container">
         <h1>DOGGO:</h1>
